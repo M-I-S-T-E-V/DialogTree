@@ -1015,6 +1015,20 @@ stock SetDefaultDialogRight(const dialog[], const right[], const color[]="")
 #endif
 
 
+stock GetDialogCount()
+{
+    new result;
+
+    for(new i = 0; i < MAX_DIALOG_ID; i++)
+    {
+        if(dtreeFunction[i][0] != EOS)
+            result++;
+    }
+
+    return result;
+}
+
+
 stock OpenPlayerDialog(playerid, const dialog[]="", style=INVALID_DIALOG_ID, const caption[]="", const info[]="", const left[]="", const right[]="")
 {
     new dialogid;
